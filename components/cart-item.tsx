@@ -22,15 +22,15 @@ export function CartItemComponent({ item }: CartItemComponentProps) {
       className="flex gap-4 p-4 glass border border-border/50 rounded-lg"
     >
       {/* Image */}
-      <div className="relative w-24 h-24 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+      <div className="relative w-24 h-24 rounded-lg overflow-hidden bg-muted shrink-0">
         <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
       </div>
 
       {/* Info */}
       <div className="flex-1 min-w-0">
         <h3 className="font-semibold text-foreground mb-1">{item.name}</h3>
-        <p className="text-foreground/60 text-sm mb-2">${item.price.toFixed(2)} each</p>
-        <div className="text-primary font-semibold">${(item.price * item.quantity).toFixed(2)}</div>
+        <p className="text-foreground/60 text-sm mb-2">₹{item.price.toFixed(2)} each</p>
+        <div className="text-primary font-semibold">₹{(item.price * item.quantity).toFixed(2)}</div>
       </div>
 
       {/* Quantity Control */}

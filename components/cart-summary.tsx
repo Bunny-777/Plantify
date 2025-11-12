@@ -19,11 +19,11 @@ export function CartSummary() {
       <div className="space-y-3 mb-6">
         <div className="flex justify-between text-foreground/70">
           <span>Subtotal</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span>₹{subtotal.toFixed(2)}</span>
         </div>
         <div className="flex justify-between text-foreground/70">
           <span>Tax (10%)</span>
-          <span>${tax.toFixed(2)}</span>
+          <span>₹{tax.toFixed(2)}</span>
         </div>
         <div className="flex justify-between text-foreground/70">
           <span>Shipping</span>
@@ -31,7 +31,7 @@ export function CartSummary() {
         </div>
         <div className="border-t border-border pt-3 flex justify-between font-semibold text-foreground">
           <span>Total</span>
-          <span className="text-primary text-xl">${total.toFixed(2)}</span>
+          <span className="text-primary text-xl">₹{total.toFixed(2)}</span>
         </div>
       </div>
 
