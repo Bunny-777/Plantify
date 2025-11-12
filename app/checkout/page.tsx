@@ -231,13 +231,13 @@ export default function CheckoutPage() {
               <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
                 {items.map((item) => (
                   <div key={item.id} className="flex gap-3">
-                    <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                    <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-muted shrink-0">
                       <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-foreground text-sm truncate">{item.name}</p>
                       <p className="text-foreground/60 text-sm">
-                        {item.quantity}x ${item.price.toFixed(2)}
+                        {item.quantity}x ₹{item.price.toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -247,11 +247,11 @@ export default function CheckoutPage() {
               <div className="space-y-3 border-t border-border pt-4">
                 <div className="flex justify-between text-foreground/70 text-sm">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>₹{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-foreground/70 text-sm">
                   <span>Tax (10%)</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>₹{tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-foreground/70 text-sm">
                   <span>Shipping</span>
@@ -259,7 +259,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between font-semibold text-foreground text-lg">
                   <span>Total</span>
-                  <span className="text-primary">${total.toFixed(2)}</span>
+                  <span className="text-primary">₹{total.toFixed(2)}</span>
                 </div>
               </div>
             </div>
