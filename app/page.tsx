@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useCartStore } from "@/lib/store"
 
 const FEATURED_PLANTS = [
   {
@@ -38,6 +39,8 @@ const FEATURED_PLANTS = [
 ]
 
 export default function Home() {
+  const addItem = useCartStore((state) => state.addItem)
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -150,7 +153,14 @@ export default function Home() {
                     <p className="text-foreground/60 text-sm mb-4 flex-1">{plant.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-2xl font-bold text-primary">${plant.price}</span>
-                      <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Add to Cart</Button>
+                      <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={()=>{
+                        addItem({
+                          id: plant.id,
+                          name: plant.name,
+                          price: plant.price,
+                          image: plant.image
+                        })
+                      }} >Add to Cart</Button>
                     </div>
                   </CardContent>
                 </Card>
