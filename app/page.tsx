@@ -152,7 +152,7 @@ export default function Home() {
                     <h3 className="font-semibold text-lg text-foreground mb-2">{plant.name}</h3>
                     <p className="text-foreground/60 text-sm mb-4 flex-1">{plant.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-primary">${plant.price}</span>
+                      <span className="text-2xl font-bold text-primary">₹{plant.price}</span>
                       <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={()=>{
                         addItem({
                           id: plant.id,
