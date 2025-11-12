@@ -26,7 +26,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
-      <Link href={`/products/${product.id}`}>
+      <Link href={`#`}>
         <Card className="h-full border-border/50 hover:border-primary/30 transition-all glass cursor-pointer">
           <CardContent className="p-4 flex flex-col h-full">
             <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-muted">
@@ -46,7 +46,7 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-primary">${product.price}</span>
+              <span className="text-2xl font-bold text-primary">₹{product.price}</span>
             </div>
           </CardContent>
         </Card>

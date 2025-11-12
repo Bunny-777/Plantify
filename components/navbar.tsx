@@ -4,10 +4,11 @@ import Link from "next/link"
 import { useState } from "react"
 import { ShoppingCart, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useCartStore } from "@/lib/store"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-
+  const itemsInCart = useCartStore((state) => state.items);
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
@@ -46,7 +47,7 @@ export function Navbar() {
               <Button variant="ghost" size="icon" className="hover:bg-primary/10">
                 <ShoppingCart className="w-5 h-5 text-primary" />
                 <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  0
+                  {itemsInCart.length}
                 </span>
               </Button>
             </Link>
