@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 bg-gradient-to-b from-secondary via-background to-background">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-10 bg-linear-to-b from-secondary via-background to-background">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary rounded-full blur-3xl opacity-20" />
